@@ -1,0 +1,44 @@
+.custom-file-button {
+  input[type="file"] {
+    margin-left: -2px !important;
+
+    &::-webkit-file-upload-button {
+      display: none;
+    }
+
+    &::file-selector-button {
+      display: none;
+    }
+  }
+  & label {
+    border: none;
+    background-color: white;
+  }
+
+  &:hover {
+    label {
+      background-color: #d3d4d5;
+
+      border-radius: 50rem;
+      padding: 0.375rem, 0.75rem;
+      cursor: pointer;
+    }
+  }
+}
+.modal-backdrop.remove {
+  background-color: transparent !important;
+}
+.links {
+  color: black;
+  text-decoration: none;
+}
+.footer {
+  position: fixed;
+  // background-color: gray;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.badge:hover {
+  cursor: pointer;
+}
