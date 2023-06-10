@@ -8,7 +8,7 @@ const CookieIdRetriever = (req, res, next) => {
     const regex = /@([0-9]+)/;
     const [cookieStr] = arr.filter((str) => str.match(regex));
 
-    if (!cookieStr) {
+    if (!cookieStr.length) {
       res.send("not logged in");
       return;
     } else {
