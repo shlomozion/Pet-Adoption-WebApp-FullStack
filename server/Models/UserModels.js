@@ -31,6 +31,7 @@ const signUpModel = async (req) => {
   }
 };
 const logInModel = async (req, res) => {
+  console.log("im here in the cookie ");
   delete req.body.password;
   try {
     if (req.body.userId) {
@@ -49,6 +50,7 @@ const logInModel = async (req, res) => {
         maxAge: 86400000,
         httpOnly: true,
         sameSite: "lax",
+        secure: true,
       });
       console.log("set cookie");
       return true;
