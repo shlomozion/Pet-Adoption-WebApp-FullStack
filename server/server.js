@@ -33,4 +33,6 @@ dataBase.migrate
       });
     }
   })
-  .catch((err) => process.exit(1));
+  .catch((err) => {
+    process.exit(1), console.log(err);
+  });
