@@ -3,7 +3,10 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 app.use(
-  cors({ origin: "http://pet-adopt-gamma.vercel.app", credentials: true })
+  cors({
+    origin: "https://pet-adopt-gamma.vercel.app/",
+    credentials: true,
+  })
 );
 require("dotenv").config();
 const PORT = process.env.PORT;
