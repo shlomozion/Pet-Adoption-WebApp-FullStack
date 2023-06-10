@@ -2,7 +2,9 @@ const dataBase = require("./knex/knex");
 const express = require("express");
 const cors = require("cors");
 const app = express();
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(
+  cors({ origin: "http://pet-adopt-gamma.vercel.app", credentials: true })
+);
 require("dotenv").config();
 const PORT = process.env.PORT;
 app.use(express.json({ limit: "25mb" }));
