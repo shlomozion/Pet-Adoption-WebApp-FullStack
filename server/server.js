@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: "https://pet-adopt-gamma.vercel.app/",
+    origin: "https://pet-adopt-gamma.vercel.app",
     credentials: true,
   })
 );
@@ -34,5 +34,6 @@ dataBase.migrate
     }
   })
   .catch((err) => {
-    process.exit(1), console.log(err);
+    console.error("Failed to connect to the database:", err);
+    process.exit(1);
   });
