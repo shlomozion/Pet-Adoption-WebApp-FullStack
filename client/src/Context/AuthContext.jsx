@@ -12,13 +12,13 @@ export const AuthContext = ({ children }) => {
   const authFetch = async () => {
     try {
       const user = await axios.get(
-        "https://pet-adopt-gamma.vercel.app/users/token",
+        "https://server-shlomozion.vercel.app/users/token",
         {
           withCredentials: true,
         }
       );
       const admin = await axios.get(
-        "https://pet-adopt-gamma.vercel.app/admin/adminToken",
+        "https://server-shlomozion.vercel.app/admin/adminToken",
         {
           withCredentials: true,
         }

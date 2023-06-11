@@ -66,7 +66,7 @@ export default function SignUp() {
     if (isValidated === true) {
       try {
         const res = await axios.post(
-          "https://pet-adopt-shlomozion.vercel.app/users/signup",
+          "https://server-shlomozion.vercel.app/users/signup",
           {
             firstName,
             lastName,
