@@ -66,7 +66,7 @@ export default function SignUp() {
     if (isValidated === true) {
       try {
         const res = await axios.post(
-          "https://pet-adopt-gamma.vercel.app/users/signup",
+          "https://server-swart-tau.vercel.app/users/signup",
           {
             firstName,
             lastName,
