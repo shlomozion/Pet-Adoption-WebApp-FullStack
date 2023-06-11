@@ -12,7 +12,7 @@ export const AuthContext = ({ children }) => {
   const authFetch = async () => {
     try {
       const user = await axios.get(
-        "http://pet-adopt-gamma.vercel.app/users/token",
+        "https://pet-adopt-gamma.vercel.app/users/token",
         {
           withCredentials: true,
         }
