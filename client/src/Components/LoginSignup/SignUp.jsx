@@ -64,6 +64,14 @@ export default function SignUp() {
 
   const handleSignUp = async () => {
     if (isValidated === true) {
+      console.log({
+        firstName,
+        lastName,
+        email,
+        password,
+        phoneNumber,
+        isWeeklyEmail,
+      });
       try {
         const res = await axios.post(
           "https://server-shlomozion.vercel.app/users/signup",
