@@ -18,7 +18,7 @@ export const AuthContext = ({ children }) => {
         }
       );
       const admin = await axios.get(
-        "http://pet-adopt-gamma.vercel.app/admin/adminToken",
+        "https://pet-adopt-gamma.vercel.app/admin/adminToken",
         {
           withCredentials: true,
         }

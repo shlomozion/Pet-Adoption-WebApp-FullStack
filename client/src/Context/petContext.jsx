@@ -7,9 +7,12 @@ export const PetContext = ({ children }) => {
   const [petArr, setPetArr] = useState([]);
 
   const getPets = async () => {
-    const res = await axios.get("http://localhost:8000/pets/getPets", {
-      withCredentials: true,
-    });
+    const res = await axios.get(
+      "https://pet-adopt-gamma.vercel.app/pets/getPets",
+      {
+        withCredentials: true,
+      }
+    );
     if (res.data) {
       console.log("done");
       setPetArr(res.data);
