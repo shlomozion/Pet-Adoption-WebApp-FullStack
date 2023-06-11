@@ -11,12 +11,18 @@ export const AuthContext = ({ children }) => {
   const [isAdminMode, setIsAdminMode] = useState(false);
   const authFetch = async () => {
     try {
-      const user = await axios.get("http://localhost:8000/users/token", {
-        withCredentials: true,
-      });
-      const admin = await axios.get("http://localhost:8000/admin/adminToken", {
-        withCredentials: true,
-      });
+      const user = await axios.get(
+        "http://pet-adopt-gamma.vercel.app/users/token",
+        {
+          withCredentials: true,
+        }
+      );
+      const admin = await axios.get(
+        "http://pet-adopt-gamma.vercel.app/admin/adminToken",
+        {
+          withCredentials: true,
+        }
+      );
       if (user.data.token) {
         // console.log("user", user);
         setCurrentUser(user.data);
