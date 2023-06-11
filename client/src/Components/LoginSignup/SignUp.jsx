@@ -74,7 +74,7 @@ export default function SignUp() {
       });
       try {
         const res = await axios.post(
-          "https://server-shlomozion.vercel.app/users/signup",
+          "https://server-swart-tau.vercel.app/users/signup",
           {
             firstName,
             lastName,
