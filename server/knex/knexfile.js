@@ -29,8 +29,8 @@ module.exports = {
     connection: {
       database: "pet_adoption",
       user: "root",
-      password: "",
-      host: "127.0.0.1",
+      password: "Sz$8452752",
+      host: "pet-adopt.cn1g2k9g4tm7.us-east-1.rds.amazonaws.com",
     },
     pool: {
       min: 2,
