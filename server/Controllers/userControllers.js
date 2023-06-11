@@ -12,8 +12,8 @@ const {
 
 const signUp = async (req, res) => {
   try {
-    const newUserId = await signUpModel(req);
-    const isCookieSet = await logInModel(req, res);
+    // const newUserId = await signUpModel(req);
+    // const isCookieSet = await logInModel(req, res);
     res.status(201).send(req.body);
   } catch (err) {
     res.status(500);
