@@ -66,7 +66,7 @@ export default function SignUp() {
     if (isValidated === true) {
       try {
         const res = await axios.post(
-          `http://localhost:8000/users/signup`,
+          `https://pet-adopt-gamma.vercel.app/users/signup`,
           {
             firstName,
             lastName,
