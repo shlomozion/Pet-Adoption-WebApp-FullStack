@@ -11,12 +11,12 @@ export const AuthContext = ({ children }) => {
   const [isAdminMode, setIsAdminMode] = useState(false);
   const authFetch = async () => {
     try {
-      const user = await axios.get(
-        "https://server-shlomozion.vercel.app/users/token",
-        {
-          withCredentials: true,
-        }
-      );
+      // const user = await axios.get(
+      //   "https://server-shlomozion.vercel.app/users/token",
+      //   {
+      //     withCredentials: true,
+      //   }
+      // );
       const admin = await axios.get(
         "https://server-shlomozion.vercel.app/admin/adminToken",
         {
