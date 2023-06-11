@@ -18,12 +18,13 @@ export const AuthContext = ({ children }) => {
       //     withCredentials: true,
       //   }
       // );
-      const admin = await axios.get(
-        "https://server-shlomozion.vercel.app/admin/adminToken",
-        {
-          withCredentials: true,
-        }
-      );
+      let admin;
+      // = await axios.get(
+      //   "https://server-shlomozion.vercel.app/admin/adminToken",
+      //   {
+      //     withCredentials: true,
+      //   }
+      // );
       if (user.data.token) {
         // console.log("user", user);
         setCurrentUser(user.data);
