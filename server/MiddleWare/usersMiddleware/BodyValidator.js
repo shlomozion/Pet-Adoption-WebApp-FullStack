@@ -10,7 +10,7 @@ function bodyValidator(schema) {
         res.status(400).send(ajv.errors[0].message);
         return;
       }
-      res.send("body validator");
+
       next();
     };
   } catch (err) {
