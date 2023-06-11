@@ -4,13 +4,12 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: "https://server-swart-tau.vercel.app",
-
+    origin: "https://pet-adopt-gamma.vercel.app",
     credentials: true,
   })
 );
 require("dotenv").config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 app.use(express.json({ limit: "25mb" }));
 app.use(express.urlencoded({ extended: true }));
 const usersRoute = require("./Routes/userRoutes");
