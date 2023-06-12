@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: "*",
+    origin: "https://pet-adopt-gamma.vercel.app",
     credentials: true,
   })
 );
