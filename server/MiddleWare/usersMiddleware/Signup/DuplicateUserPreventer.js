@@ -4,8 +4,8 @@ const duplicateUserPreventer = async (req, res, next) => {
   try {
     const { email } = req.body;
     console.log("req", req.body);
-    const response = await database("users");
     console.time();
+    const response = await database("users");
     // .where({ email: email });
     console.log("response:", response);
 
