@@ -4,10 +4,7 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: [
-      "https://pet-adopt-gamma.vercel.app",
-      "https://server-swart-tau.vercel.app",
-    ],
+    origin: "https://pet-adopt-gamma.vercel.app",
     credentials: true,
   })
 );
