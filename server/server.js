@@ -1,13 +1,13 @@
 const dataBase = require("./knex/knex");
 const express = require("express");
-const cors = require("cors");
+// const cors = require("cors");
 const app = express();
-app.use(
-  cors({
-    origin: "https://pet-adopt-gamma.vercel.app",
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://pet-adopt-gamma.vercel.app",
+//     credentials: true,
+//   })
+// );
 const compression = require("compression");
 app.use(compression());
 require("dotenv").config();
