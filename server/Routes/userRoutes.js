@@ -66,7 +66,7 @@ router.post(
 
 router.post(
   "/signup",
-  // bodyValidator(signUpSchema),
+  bodyValidator(signUpSchema),
   // duplicateUserPreventer,
   // encryptPassword,
   userController.signUp
