@@ -8,6 +8,8 @@ app.use(
     credentials: true,
   })
 );
+const compression = require("compression");
+app.use(compression());
 require("dotenv").config();
 const PORT = process.env.PORT || 8000;
 app.use(express.json({ limit: "25mb" }));
