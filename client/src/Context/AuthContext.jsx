@@ -9,6 +9,7 @@ export const AuthContext = ({ children }) => {
   const [token, setToken] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdminMode, setIsAdminMode] = useState(false);
+
   const authFetch = async () => {
     try {
       const user = await axios.get(
@@ -17,12 +18,12 @@ export const AuthContext = ({ children }) => {
           withCredentials: true,
         }
       );
-      const admin = await axios.get(
-        "https://server-swart-tau.vercel.app/admin/adminToken",
-        {
-          withCredentials: true,
-        }
-      );
+      // const admin = await axios.get(
+      //   "https://server-swart-tau.vercel.app/admin/adminToken",
+      //   {
+      //     withCredentials: true,
+      //   }
+      // );
       if (user.data.token) {
         // console.log("user", user);
         setCurrentUser(user.data);
@@ -32,14 +33,14 @@ export const AuthContext = ({ children }) => {
         setIsAdminMode(false);
         return;
       }
-      if (admin.data.token) {
-        // console.log("admin", admin);
-        setCurrentUser(admin.data.admin);
-        setToken(admin.data.token);
-        setIsLoggedIn(true);
-        setIsAdminMode(true);
-      }
-      if (!user.data.token && !admin.data.token) {
+      // if (admin.data.token) {
+      //   // console.log("admin", admin);
+      //   setCurrentUser(admin.data.admin);
+      //   setToken(admin.data.token);
+      //   setIsLoggedIn(true);
+      //   setIsAdminMode(true);
+      // }
+      if (!user.data.token) {
         setIsLoggedIn(false);
         setCurrentUser("");
         setUserProfileImg("");
