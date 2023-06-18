@@ -11,13 +11,13 @@ export const AuthContext = ({ children }) => {
   const [isAdminMode, setIsAdminMode] = useState(false);
   const authFetch = async () => {
     try {
-      let user = await axios.get(
+      const user = await axios.get(
         "https://server-swart-tau.vercel.app/users/token",
         {
           withCredentials: true,
         }
       );
-      let admin = await axios.get(
+      const admin = await axios.get(
         "https://server-swart-tau.vercel.app/admin/adminToken",
         {
           withCredentials: true,
