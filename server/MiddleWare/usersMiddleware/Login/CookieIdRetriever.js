@@ -1,8 +1,10 @@
 const CookieIdRetriever = (req, res, next) => {
-  console.log("req.headers", req.headers.cookies);
+  console.log("req.headers", req.headers);
   // console.log("req.body", req.body);
   try {
     const rawCookie = req.headers.cookie;
+    console.log(" rawCookie:", rawCookie);
+
     if (!rawCookie) {
       return;
     } else {
