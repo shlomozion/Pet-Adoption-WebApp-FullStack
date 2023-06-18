@@ -3,7 +3,7 @@ const { getPetsModel } = require("../Models/petModels");
 
 const getPets = async (req, res) => {
   const allPets = await getPetsModel();
-  // console.log("req", allPets);
+  console.log("req", allPets);
   res.send(allPets);
 };
 const getPetById = (req, res) => {};

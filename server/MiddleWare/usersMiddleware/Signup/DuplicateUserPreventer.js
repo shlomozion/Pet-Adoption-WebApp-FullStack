@@ -3,10 +3,9 @@ const database = require("../../../knex/knex");
 const duplicateUserPreventer = async (req, res, next) => {
   try {
     const { email } = req.body;
-    console.log("req", req.headers);
+    console.log("req in duplicate", req.body);
 
-    const response = await database("users");
-    // .where({ email: email });
+    const response = await database("users").where({ email: email });
     console.log("response:", response);
 
     !response[0]?.email
