@@ -1,11 +1,11 @@
 const CookieIdRetriever = (req, res, next) => {
-  console.log("req.headers", req.headers);
+  // console.log("req.headers", req.headers);
   // console.log("req.body", req.body);
   try {
     const rawCookie = req.headers.cookie;
-    console.log(" rawCookie:", rawCookie);
 
     if (!rawCookie) {
+      console.log("!rawCookie");
       return;
     } else {
       let arr = rawCookie.split(";");
@@ -13,6 +13,8 @@ const CookieIdRetriever = (req, res, next) => {
       const [cookieStr] = arr.filter((str) => str.match(regex));
 
       if (!cookieStr.length) {
+        console.log("!cookieStr.length");
+
         res.send("not logged in");
         return;
       } else {
