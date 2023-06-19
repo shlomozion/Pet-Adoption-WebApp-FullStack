@@ -41,6 +41,7 @@ const logInModel = async (req, res) => {
         httpOnly: true,
         sameSite: "None",
         secure: true,
+        domain: "pet-adopt-gamma.vercel.app",
       });
       console.log("set cookie");
       return true;
@@ -52,6 +53,7 @@ const logInModel = async (req, res) => {
         httpOnly: true,
         sameSite: "None",
         secure: true,
+        domain: "pet-adopt-gamma.vercel.app",
       });
       console.log("set cookie");
       return true;
