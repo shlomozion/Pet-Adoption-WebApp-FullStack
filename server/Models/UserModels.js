@@ -39,8 +39,6 @@ const logInModel = async (req, res) => {
       res.cookie("@" + userId, token, {
         maxAge: 86400000,
         httpOnly: true,
-        sameSite: "Strict",
-        secure: true,
       });
       console.log("set cookie");
       return true;
@@ -50,8 +48,6 @@ const logInModel = async (req, res) => {
       res.cookie("@" + adminId, token, {
         maxAge: 86400000,
         httpOnly: true,
-        sameSite: "Strict",
-        secure: true,
       });
       console.log("set cookie");
       return true;
