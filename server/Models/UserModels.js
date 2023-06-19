@@ -40,6 +40,7 @@ const logInModel = async (req, res) => {
         maxAge: 86400000,
         httpOnly: true,
         sameSite: "lax",
+        secure: true,
       });
       console.log("set cookie");
       return true;

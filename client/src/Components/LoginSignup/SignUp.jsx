@@ -16,7 +16,6 @@ export default function SignUp() {
   const navigate = useNavigate();
   const { setIsLoggedIn } = useContext(AuthContextInstance);
   const { setCurrentUser } = useContext(UserContextInstance);
-  // console.log(setIsLoggedIn);
 
   const { firstName, setFirstName, isFirstNameValid } = useFirstNameValidator();
   const { lastName, setLastName, isLastNameValid } = useLastNameValidator();
@@ -145,7 +144,11 @@ export default function SignUp() {
               Invalid email
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group md="4" controlId="validationCustom04">
+          <Form.Group
+            md="4"
+            controlId="validationCustom04"
+            autocomplete="new-password"
+          >
             <Form.Label>Password</Form.Label>
             <Form.Control
               isValid={isPasswordValid}
@@ -161,7 +164,11 @@ export default function SignUp() {
               Invalid password
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group md="4" controlId="validationCustom05">
+          <Form.Group
+            md="4"
+            controlId="validationCustom05"
+            autocomplete="new-password"
+          >
             <Form.Label>Confirm password</Form.Label>
             <Form.Control
               isValid={isRePasswordValid}

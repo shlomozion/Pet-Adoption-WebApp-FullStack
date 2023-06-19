@@ -14,11 +14,9 @@ export const PetContext = ({ children }) => {
       }
     );
     if (res.data) {
-      console.log("done");
       setPetArr(res.data);
     }
   };
-  // console.log(petArr);
   useEffect(() => {
     getPets();
   }, []);

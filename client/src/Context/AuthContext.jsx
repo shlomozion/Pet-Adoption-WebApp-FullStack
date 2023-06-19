@@ -9,6 +9,7 @@ export const AuthContext = ({ children }) => {
   const [token, setToken] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdminMode, setIsAdminMode] = useState(false);
+
   const authFetch = async () => {
     try {
       const user = await axios.get(
@@ -24,7 +25,6 @@ export const AuthContext = ({ children }) => {
         }
       );
       if (user.data.token) {
-        // console.log("user", user);
         setCurrentUser(user.data);
         setToken(user.data.token);
         setUserProfileImg(user.data.key);
@@ -33,7 +33,6 @@ export const AuthContext = ({ children }) => {
         return;
       }
       if (admin.data.token) {
-        // console.log("admin", admin);
         setCurrentUser(admin.data.admin);
         setToken(admin.data.token);
         setIsLoggedIn(true);
