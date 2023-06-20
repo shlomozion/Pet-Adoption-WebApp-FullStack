@@ -8,7 +8,7 @@ export const PetContext = ({ children }) => {
 
   const getPets = async () => {
     const res = await axios.get(
-      "https://server-sable-sigma.vercel.app/pets/getPets",
+      "https://pet-adopt-server.vercel.app/pets/getPets",
       {
         withCredentials: true,
       }
