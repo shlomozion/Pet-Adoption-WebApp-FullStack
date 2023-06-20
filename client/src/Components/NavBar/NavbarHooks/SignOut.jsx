@@ -12,7 +12,7 @@ const useSignOut = () => {
     try {
       const { userId } = currentUser || {};
       const removeCookie = await axios.post(
-        `https://server-swart-tau.vercel.app/users/signout/${userId}`,
+        `https://pet-adopt-server.vercel.app/users/signout/${userId}`,
         {},
         {
           withCredentials: true,
