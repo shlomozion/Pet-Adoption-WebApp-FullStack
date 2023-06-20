@@ -13,13 +13,13 @@ export const AuthContext = ({ children }) => {
   const authFetch = async () => {
     try {
       const user = await axios.get(
-        "https://server-swart-tau.vercel.app/users/token",
+        "https://pet-adopt-server.vercel.app/users/token",
         {
           withCredentials: true,
         }
       );
       const admin = await axios.get(
-        "https://server-swart-tau.vercel.app/admin/adminToken",
+        "https://pet-adopt-server.vercel.app/admin/adminToken",
         {
           withCredentials: true,
         }
