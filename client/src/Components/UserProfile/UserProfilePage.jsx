@@ -75,7 +75,7 @@ export default function UserProfilePage() {
   const oldPasswordValidatorHandler = async () => {
     try {
       const res = await axios.post(
-        `http://pet-adopt-server.vercel.app/users/validateOldPassword`,
+        `https://pet-adopt-server.vercel.app/users/validateOldPassword`,
         {
           password,
         },
@@ -96,7 +96,7 @@ export default function UserProfilePage() {
       // console.log("ready to reset password");
       try {
         const res = await axios.post(
-          `http://pet-adopt-server.vercel.app/users/resetPassword`,
+          `https://pet-adopt-server.vercel.app/users/resetPassword`,
           {
             password,
           },
@@ -178,7 +178,7 @@ export default function UserProfilePage() {
     } else {
       try {
         const res = await axios.put(
-          `http://pet-adopt-server.vercel.app/users/updateUserInfo/:${userId}`,
+          `https://pet-adopt-server.vercel.app/users/updateUserInfo/:${userId}`,
           {
             updatedFieldsObj,
           },
@@ -211,7 +211,7 @@ export default function UserProfilePage() {
   const profileImagePostRequest = async () => {
     try {
       const res = await axios.post(
-        `http://pet-adopt-server.vercel.app/users/uploadImg/:${userId}`,
+        `https://pet-adopt-server.vercel.app/users/uploadImg/:${userId}`,
         formData,
         {
           withCredentials: true,
