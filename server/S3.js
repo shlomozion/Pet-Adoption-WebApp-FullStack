@@ -19,7 +19,9 @@ const uploadFile = async (file) => {
     Key: file.originalname,
     Body: readStream,
   };
-  return s3.upload(uploadParams).promise();
+  console.log("file: S3.js:22 ~ uploadFile ~ uploadParams:", uploadParams);
+  return;
+  // return s3.upload(uploadParams).promise();
 };
 
 const uploadPetImage = async (file) => {
