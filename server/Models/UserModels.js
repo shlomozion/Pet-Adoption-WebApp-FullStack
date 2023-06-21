@@ -65,7 +65,7 @@ const logInModel = async (req, res) => {
 const logOutModel = async (cookie, res) => {
   console.log("cookie", cookie);
   try {
-    res.clearCookie("@" + cookie.id, { sameSite: "None" });
+    res.clearCookie("@" + cookie.id, { sameSite: "None", secure: true });
     return true;
   } catch (err) {
     res.status(500).send(err);
