@@ -10,8 +10,8 @@ const useSignOut = () => {
 
   const signOut = async () => {
     try {
-      const userId = currentUser?.userFromDb?.userId;
-      console.log("file: SignOut.jsx:14", currentUser);
+      const userId = currentUser?.userFromDB?.userId;
+      console.log("file: SignOut.jsx:14", currentUser?.userFromDB?.userId);
 
       const removeCookie = await axios.post(
         `https://pet-adopt-server.vercel.app/users/signout/${userId}`,
