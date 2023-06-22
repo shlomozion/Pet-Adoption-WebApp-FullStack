@@ -29,7 +29,7 @@ const logIn = async (req, res) => {
     // const userImage = await getUserProfileImageModel(req);
 
     // if (!userImage) {
-    // res.status(200).send(req.body);
+    res.status(200).send(req.body);
     // } else {
     // const { key } = userImage;
     // const user = req.body;
