@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-
 const { uploadToS3 } = require("../MiddleWare/usersMiddleware/UploadImgToS3");
 const userController = require("../Controllers/userControllers");
 const {
