@@ -94,15 +94,18 @@ const getUserProfileImageModel = async (req) => {
   // console.log("file: UserModels.js:94 ~ getUserProfileImageModel ~ req:", req);
   let userId;
   if (req.body.cookie.id) {
+    console.log("req.body.cookie.id:", req.body.cookie.id);
+
     userId = req.body.cookie.id;
   }
   if (req.body.userId) {
+    console.log(" req.body.userId:", req.body.userId);
     userId = req.body.userId;
   }
-  console.log(
-    "file: UserModels.js:97 ~ getUserProfileImageModel ~ userId:",
-    userId
-  );
+  // console.log(
+  //   "file: UserModels.js:97 ~ getUserProfileImageModel ~ userId:",
+  //   userId
+  // );
   // console.log("id", id);
   try {
     // const userProfileImage = await database("profile_images")
