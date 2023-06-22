@@ -95,7 +95,6 @@ const getUserProfileImageModel = async (req) => {
     const userProfileImage = await database("profile_images")
       .where({ userId })
       .first();
-    console.log("user", userProfileImage);
     if (userProfileImage) {
       return userProfileImage;
     } else {
