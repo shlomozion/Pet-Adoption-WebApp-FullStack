@@ -14,14 +14,13 @@ const s3 = new AWS.S3({
 const uploadFile = async (file) => {
   console.log("file: S3.js:15 ~ uploadFile ~ file:", file);
   console.log("file: S3.js:16 ~ uploadFile ~ file.path:", file.path);
-  const readStream = fs.createReadStream(file.path);
 
   const uploadParams = {
     Bucket: bucketName,
     Key: file.originalname,
-    Body: readStream,
+    Body: file.buffer,
   };
-  // console.log("file: S3.js:22 ~ uploadFile ~ uploadParams:", uploadParams);
+
   return;
   // return s3.upload(uploadParams).promise();
 };
