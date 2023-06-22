@@ -8,6 +8,7 @@ app.use(
     credentials: true,
   })
 );
+
 const compression = require("compression");
 app.use(compression());
 require("dotenv").config();
