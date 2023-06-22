@@ -2,7 +2,7 @@ require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
 const authorization = async (req, res, next) => {
-  console.log("req.body", req.body);
+  // console.log("req.body", req.body);
   if (!req.headers.authorization) {
     res.status(401).send("Token Required");
     return;
