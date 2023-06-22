@@ -114,6 +114,14 @@ const updateUserPasswordById = async (req, res) => {
 };
 
 const uploadProfileImg = async (req, res) => {
+  console.log(
+    "file: userControllers.js:117 ~ uploadProfileImg ~ req.body:",
+    req.body
+  );
+  console.log(
+    "file: userControllers.js:117 ~ uploadProfileImg ~ req.file:",
+    req.file
+  );
   // const response = await uploadImgModel(req);
   // const isFileKeyToDb = await writeFileToDbModel(response);
   res.status(201).send("photo added");
