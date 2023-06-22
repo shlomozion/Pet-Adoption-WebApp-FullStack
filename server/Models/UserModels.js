@@ -104,7 +104,7 @@ const getUserProfileImageModel = async (req) => {
   // console.log("id", id);
   try {
     let userId;
-    if (req.body.cookie.id) {
+    if (req.body.cookie) {
       console.log("req.body.cookie.id:", req.body.cookie.id);
 
       userId = req.body.cookie.id;
