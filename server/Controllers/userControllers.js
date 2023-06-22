@@ -55,19 +55,19 @@ const getUserById = async (req, res) => {
     // console.log("id", userId);
     const { token } = req.body.cookie;
     console.log("req.body.cookie", req.body.cookie.token);
-    const userFromDB = await getUserByIdModel(req);
-    if (!userFromDB) {
-      res.send(null);
-      return;
-    }
-    delete userFromDB.password;
+    // const userFromDB = await getUserByIdModel(req);
+    // if (!userFromDB) {
+    //   res.send(null);
+    //   return;
+    // }
+    // delete userFromDB.password;
     // const userImage = await getUserProfileImageModel(req);
     // console.log("userImg", userImage);
     // console.log(req.body);
     // if (!userImage) {
     res.send({
       token,
-      userFromDB,
+      // userFromDB,
     });
     // } else {
     //   const key = userImage.key;
