@@ -88,7 +88,7 @@ const getUserById = async (req, res) => {
 
 const updateUserById = async (req, res) => {
   try {
-    // const { userId } = req.body.cookie;
+    const { userId } = req.body.cookie;
     const updatedFieldsObj = req.body.updatedFieldsObj;
     const updateFieldArr = Object.entries(updatedFieldsObj);
     updateFieldArr.unshift(["userId", userId]);
