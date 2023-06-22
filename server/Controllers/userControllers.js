@@ -89,10 +89,10 @@ const getUserById = async (req, res) => {
 const updateUserById = async (req, res) => {
   console.log(" req.body.cookie:", req.body.cookie);
   try {
-    const { userId } = req.body.cookie;
+    const { id } = req.body.cookie;
     const updatedFieldsObj = req.body.updatedFieldsObj;
     const updateFieldArr = Object.entries(updatedFieldsObj);
-    updateFieldArr.unshift(["userId", userId]);
+    updateFieldArr.unshift(["userId", id]);
 
     const isUserUpdated = await updateUserByIdModel(updateFieldArr);
     const updatedUser = await getUserByIdModel(req);
