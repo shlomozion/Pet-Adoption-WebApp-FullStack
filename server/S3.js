@@ -21,8 +21,7 @@ const uploadFile = async (file) => {
     Body: file.buffer,
   };
 
-  return;
-  // return s3.upload(uploadParams).promise();
+  return s3.upload(uploadParams).promise();
 };
 
 const uploadPetImage = async (file) => {
