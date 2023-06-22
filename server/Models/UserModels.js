@@ -131,45 +131,41 @@ const updateUserByIdModel = async (updateFieldArr) => {
     return false;
   }
 };
-const uploadImgModel = async (req) => {
-  try {
-    const userId = req.params.id.replace(":", "");
-    const file = req.file;
 
-    // const result = await uploadFile(file);
-
-    return;
-    // { result, userId };
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
-const writeFileToDbModel = async (response) => {
-  const isKeyAdded = await database("profile_images")
-    .select("userId")
-    .where("userId", response.userId)
-    .then((rows) => {
-      if (rows.length > 0) {
-        return database("profile_images")
-          .where("userId", response.userId)
-          .update({
-            userId: response.userId,
-            key: response.result.Location,
-          });
-      } else {
-        return database("profile_images").insert({
-          userId: response.userId,
-          key: response.result.key,
-        });
-      }
-    })
-    .then(() => {
-      console.log("Value was updated or inserted successfully.");
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-  return response.result.key;
+const writeFileToDbModel = async (req) => {
+  const userId = req.params.id.replace(":", "");
+  console.log("file: UserModels.js:137 ~ writeFileToDbModel ~ userId:", userId);
+  const profileImg = req.file.location;
+  console.log(
+    "file: UserModels.js:139 ~ writeFileToDbModel ~ profileImg:",
+    profileImg
+  );
+  // const isKeyAdded = await database("profile_images")
+  //   .select("userId")
+  //   .where("userId", response.userId)
+  //   .then((rows) => {
+  //     if (rows.length > 0) {
+  //       return database("profile_images")
+  //         .where("userId", response.userId)
+  //         .update({
+  //           userId: response.userId,
+  //           key: response.result.Location,
+  //         });
+  //     } else {
+  //       return database("profile_images").insert({
+  //         userId: response.userId,
+  //         key: response.result.key,
+  //       });
+  //     }
+  //   })
+  //   .then(() => {
+  //     console.log("Value was updated or inserted successfully.");
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error:", error);
+  //   });
+  return;
+  // response.result.key;
 };
 
 module.exports = {

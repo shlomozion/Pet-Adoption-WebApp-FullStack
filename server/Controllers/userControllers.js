@@ -114,22 +114,7 @@ const updateUserPasswordById = async (req, res) => {
 };
 
 const uploadProfileImg = async (req, res) => {
-  const userId = req.params.id.replace(":", "");
-  console.log(
-    "file: userControllers.js:118 ~ uploadProfileImg ~ userId:",
-    userId
-  );
-  // console.log("file: userControllers.js:117 ~ uploadProfileImg ~ req:", req);
-
-  // console.log(
-  //   "file: userControllers.js:117 ~ uploadProfileImg ~ req.body:",
-  //   req.body
-  // );
-  // console.log(
-  //   "file: userControllers.js:117 ~ uploadProfileImg ~ req.file:",
-  //   req.file
-  // );
-  // const isFileKeyToDb = await writeFileToDbModel(response);
+  const isFileKeyToDb = await writeFileToDbModel(req);
   res.status(201).send("photo added");
 };
 
