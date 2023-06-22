@@ -73,15 +73,9 @@ const logOutModel = async (cookie, res) => {
   }
 };
 const getUserByIdModel = async (req) => {
-  // console.log("file: UserModels.js:76 ~ getUserByIdModel ~ req:", req);
-
-  const userId = req.body.cookie.id;
-  // console.log("file: UserModels.js:79 ~ getUserByIdModel ~ userId:", userId);
-  // console.log("file: UserModels.js:77 ~ getUserByIdModel ~ userId:", userId);
-  // console.log(req, "id");
   try {
+    const userId = req.body.cookie.id;
     const user = await database("users").where({ userId }).first();
-    // console.log("user", user);
     if (!user) {
       return;
     }
@@ -91,35 +85,22 @@ const getUserByIdModel = async (req) => {
   }
 };
 const getUserProfileImageModel = async (req) => {
-  // console.log("file: UserModels.js:94 ~ getUserProfileImageModel ~ req:", req);
-
-  // if (req.body.userId) {
-  //   console.log(" req.body.userId:", req.body.userId);
-  //   userId = req.body.userId;
-  // }
-  // console.log(
-  //   "file: UserModels.js:97 ~ getUserProfileImageModel ~ userId:",
-  //   userId
-  // );
-  // console.log("id", id);
   try {
     let userId;
     if (req.body.cookie) {
-      console.log("req.body.cookie.id:", req.body.cookie.id);
-
       userId = req.body.cookie.id;
     } else {
-      console.log("check this", req.body.userId);
+      userId = req.body.userId;
     }
-    // const userProfileImage = await database("profile_images")
-    //   .where({ userId })
-    //   .first();
-    // // console.log("user", userProfileImage);
-    // if (userProfileImage) {
-    //   return userProfileImage;
-    // } else {
-    return;
-    // }
+    const userProfileImage = await database("profile_images")
+      .where({ userId })
+      .first();
+    console.log("user", userProfileImage);
+    if (userProfileImage) {
+      return userProfileImage;
+    } else {
+      return;
+    }
   } catch (err) {
     console.log(err);
   }
