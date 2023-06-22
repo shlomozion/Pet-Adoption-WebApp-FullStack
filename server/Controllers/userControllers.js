@@ -56,10 +56,10 @@ const getUserById = async (req, res) => {
     const { token } = req.body.cookie;
 
     const userFromDB = await getUserByIdModel(req);
-    console.log(
-      "file: userControllers.js:59 ~ getUserById ~ userFromDB:",
-      userFromDB
-    );
+    // console.log(
+    //   "file: userControllers.js:59 ~ getUserById ~ userFromDB:",
+    //   userFromDB
+    // );
     if (!userFromDB) {
       res.send(null);
       return;
