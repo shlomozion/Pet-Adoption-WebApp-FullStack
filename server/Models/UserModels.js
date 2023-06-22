@@ -91,6 +91,8 @@ const getUserByIdModel = async (req) => {
   }
 };
 const getUserProfileImageModel = async (req) => {
+  console.log("file: UserModels.js:94 ~ getUserProfileImageModel ~ req:", req);
+
   const userId = req.body.cookie.id;
   // console.log("id", id);
   try {
