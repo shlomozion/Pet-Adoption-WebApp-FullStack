@@ -91,9 +91,13 @@ const getUserByIdModel = async (req) => {
   }
 };
 const getUserProfileImageModel = async (req) => {
-  console.log("file: UserModels.js:94 ~ getUserProfileImageModel ~ req:", req);
+  // console.log("file: UserModels.js:94 ~ getUserProfileImageModel ~ req:", req);
 
   const userId = req.body.cookie.id || req.body.userId;
+  console.log(
+    "file: UserModels.js:97 ~ getUserProfileImageModel ~ userId:",
+    userId
+  );
   // console.log("id", id);
   try {
     const userProfileImage = await database("profile_images")
