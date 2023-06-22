@@ -12,6 +12,8 @@ const s3 = new AWS.S3({
   region,
 });
 const uploadFile = async (file) => {
+  console.log("file: S3.js:15 ~ uploadFile ~ file:", file);
+  console.log("file: S3.js:16 ~ uploadFile ~ file.path:", file.path);
   const readStream = fs.createReadStream(file.path);
 
   const uploadParams = {
@@ -19,13 +21,13 @@ const uploadFile = async (file) => {
     Key: file.originalname,
     Body: readStream,
   };
-  console.log("file: S3.js:22 ~ uploadFile ~ uploadParams:", uploadParams);
+  // console.log("file: S3.js:22 ~ uploadFile ~ uploadParams:", uploadParams);
   return;
   // return s3.upload(uploadParams).promise();
 };
 
 const uploadPetImage = async (file) => {
-  console.log("🚀 ~ file: :", file);
+  // console.log("🚀 ~ file: :", file);
 
   const fileStream = fs.createReadStream(file.path);
 
