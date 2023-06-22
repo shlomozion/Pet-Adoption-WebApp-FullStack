@@ -53,7 +53,8 @@ const logOut = async (req, res) => {
 const getUserById = async (req, res) => {
   try {
     // console.log("id", userId);
-    // console.log("req.body.cookie", req.body.cookie.id);
+    const { token } = req.body.cookie;
+    console.log("req.body.cookie", req.body.cookie.token);
     const userFromDB = await getUserByIdModel(req);
     if (!userFromDB) {
       res.send(null);
