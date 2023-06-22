@@ -75,7 +75,7 @@ const logOutModel = async (cookie, res) => {
 const getUserByIdModel = async (req) => {
   // console.log("file: UserModels.js:76 ~ getUserByIdModel ~ req:", req);
 
-  const userId = req.body.id;
+  const userId = req.body.cookie.id;
   console.log("file: UserModels.js:79 ~ getUserByIdModel ~ userId:", userId);
   // console.log("file: UserModels.js:77 ~ getUserByIdModel ~ userId:", userId);
   // console.log(req, "id");
@@ -91,7 +91,7 @@ const getUserByIdModel = async (req) => {
   }
 };
 const getUserProfileImageModel = async (req) => {
-  const userId = req.body.id;
+  const userId = req.body.cookie.id;
   // console.log("id", id);
   try {
     const userProfileImage = await database("profile_images")
