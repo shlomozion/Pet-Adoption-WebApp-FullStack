@@ -131,10 +131,13 @@ const updateUserByIdModel = async (updateFieldArr) => {
   }
 };
 const uploadImgModel = async (req) => {
+  console.log("file: UserModels.js:134 ~ uploadImgModel ~ req:", req);
   try {
     const userId = req.params.id.replace(":", "");
+    console.log("file: UserModels.js:136 ~ uploadImgModel ~ userId:", userId);
     const file = req.file;
-    const result = await uploadFile(file);
+    console.log("file: UserModels.js:138 ~ uploadImgModel ~ file:", file);
+    // const result = await uploadFile(file);
 
     return { result, userId };
   } catch (err) {

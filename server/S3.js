@@ -12,14 +12,12 @@ const s3 = new AWS.S3({
   region,
 });
 const uploadFile = async (file) => {
-  console.log("file: S3.js:15 ~ uploadFile ~ file:", file.buffer);
-
+  // console.log("file: S3.js:15 ~ uploadFile ~ file:", file.buffer);
   // const uploadParams = {
   //   Bucket: bucketName,
   //   Key: file.originalname,
   //   Body: file.buffer,
   // };
-
   // return s3.upload(uploadParams).promise();
 };
 
