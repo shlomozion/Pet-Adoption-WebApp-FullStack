@@ -134,36 +134,30 @@ const updateUserByIdModel = async (updateFieldArr) => {
 
 const writeFileToDbModel = async (req) => {
   const userId = req.params.id.replace(":", "");
-  console.log("file: UserModels.js:137 ~ writeFileToDbModel ~ userId:", userId);
   const profileImg = req.file.location;
-  console.log(
-    "file: UserModels.js:139 ~ writeFileToDbModel ~ profileImg:",
-    profileImg
-  );
-  // const isKeyAdded = await database("profile_images")
-  //   .select("userId")
-  //   .where("userId", response.userId)
-  //   .then((rows) => {
-  //     if (rows.length > 0) {
-  //       return database("profile_images")
-  //         .where("userId", response.userId)
-  //         .update({
-  //           userId: response.userId,
-  //           key: response.result.Location,
-  //         });
-  //     } else {
-  //       return database("profile_images").insert({
-  //         userId: response.userId,
-  //         key: response.result.key,
-  //       });
-  //     }
-  //   })
-  //   .then(() => {
-  //     console.log("Value was updated or inserted successfully.");
-  //   })
-  //   .catch((error) => {
-  //     console.error("Error:", error);
-  //   });
+
+  const isKeyAdded = await database("profile_images")
+    .select("userId")
+    .where("userId", userId)
+    .then((rows) => {
+      if (rows.length > 0) {
+        return database("profile_images").where("userId", userId).update({
+          userId: userId,
+          key: profileImg,
+        });
+      } else {
+        return database("profile_images").insert({
+          userId: userId,
+          key: profileImg,
+        });
+      }
+    })
+    .then(() => {
+      console.log("Value was updated or inserted successfully.");
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
   return;
   // response.result.key;
 };
