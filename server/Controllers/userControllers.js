@@ -54,9 +54,12 @@ const getUserById = async (req, res) => {
   try {
     // console.log("id", userId);
     const { token } = req.body.cookie;
-    console.log("file: userControllers.js:57 ~ getUserById ~ token:", token);
-    // console.log("req.body.cookie", req.body.cookie.token);
-    // const userFromDB = await getUserByIdModel(req);
+
+    const userFromDB = await getUserByIdModel(req);
+    console.log(
+      "file: userControllers.js:59 ~ getUserById ~ userFromDB:",
+      userFromDB
+    );
     // if (!userFromDB) {
     //   res.send(null);
     //   return;

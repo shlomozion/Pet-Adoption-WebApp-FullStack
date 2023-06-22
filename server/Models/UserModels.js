@@ -77,12 +77,13 @@ const getUserByIdModel = async (req) => {
   console.log("file: UserModels.js:77 ~ getUserByIdModel ~ userId:", userId);
   // console.log(req, "id");
   try {
-    const user = await database("users").where({ userId }).first();
-    console.log("user", user);
-    if (!user) {
-      return;
-    }
-    return user;
+    // const user = await database("users").where({ userId }).first();
+    // console.log("user", user);
+    // if (!user) {
+    //   return;
+    // }
+    return;
+    // user;
   } catch (err) {
     console.log(err);
   }
