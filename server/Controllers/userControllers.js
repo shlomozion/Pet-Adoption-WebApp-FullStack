@@ -50,20 +50,17 @@ const logOut = async (req, res) => {
   }
 };
 
-const getUsers = (req, res) => {};
-
 const getUserById = async (req, res) => {
   try {
-    const { id, token } = req.body.cookie;
     // console.log("id", userId);
     // console.log("req.body.cookie", req.body.cookie.id);
-    const userFromDB = await getUserByIdModel(req.body.cookie);
+    const userFromDB = await getUserByIdModel(req);
     if (!userFromDB) {
       res.send(null);
       return;
     }
     delete userFromDB.password;
-    const userImage = await getUserProfileImageModel(req.body.cookie.id);
+    const userImage = await getUserProfileImageModel(req);
     // console.log("userImg", userImage);
     // console.log(req.body);
     if (!userImage) {

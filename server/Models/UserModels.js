@@ -87,13 +87,16 @@ const getUserByIdModel = async (req) => {
     console.log(err);
   }
 };
-const getUserProfileImageModel = async (id) => {
-  console.log("id", id);
+const getUserProfileImageModel = async (req) => {
+  const userId = req.params.id.replace(":", "");
+  // console.log("id", id);
   try {
-    const user = await database("profile_images").where({ userId: id }).first();
-    console.log("user", user);
-    if (user) {
-      return user;
+    const userProfileImage = await database("profile_images")
+      .where({ userId })
+      .first();
+    console.log("user", userProfileImage);
+    if (userProfileImage) {
+      return userProfileImage;
     } else {
       return;
     }
