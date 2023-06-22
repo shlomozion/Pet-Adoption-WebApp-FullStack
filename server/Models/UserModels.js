@@ -92,7 +92,12 @@ const getUserProfileImageModel = async (req) => {
     } else {
       userId = req.body.userId;
     }
-    const userProfileImage = await database("profile_images")
+    const userProfileImage = await database("profile_images");
+    console
+      .log(
+        "file: UserModels.js:96 ~ getUserProfileImageModel ~ userProfileImage:",
+        userProfileImage
+      )
       .where({ userId })
       .first();
     if (userProfileImage) {
