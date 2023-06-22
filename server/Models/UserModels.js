@@ -30,7 +30,7 @@ const signUpModel = async (req) => {
   }
 };
 const logInModel = async (req, res) => {
-  console.log("im here in the cookie ");
+  // console.log("im here in the cookie ");
   delete req.body.password;
   try {
     if (req.body.userId) {
@@ -41,7 +41,7 @@ const logInModel = async (req, res) => {
         sameSite: "None",
         secure: true,
       });
-      console.log("set cookie");
+      // console.log("set cookie");
       return true;
     }
     if (req.body.adminId) {
@@ -52,7 +52,7 @@ const logInModel = async (req, res) => {
         sameSite: "None",
         secure: true,
       });
-      console.log("set cookie");
+      // console.log("set cookie");
       return true;
     }
   } catch (err) {
