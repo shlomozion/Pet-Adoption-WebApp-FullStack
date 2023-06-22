@@ -65,10 +65,10 @@ const getUserById = async (req, res) => {
     // console.log("userImg", userImage);
     // console.log(req.body);
     // if (!userImage) {
-    //   res.send({
-    //     token,
-    //     userFromDB,
-    //   });
+    res.send({
+      token,
+      userFromDB,
+    });
     // } else {
     //   const key = userImage.key;
     //   res.send({
