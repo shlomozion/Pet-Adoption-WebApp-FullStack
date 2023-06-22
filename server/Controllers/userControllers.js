@@ -60,27 +60,27 @@ const getUserById = async (req, res) => {
       "file: userControllers.js:59 ~ getUserById ~ userFromDB:",
       userFromDB
     );
-    // if (!userFromDB) {
-    // res.send(null);
-    //   return;
-    // }
-    // delete userFromDB.password;
-    // const userImage = await getUserProfileImageModel(req);
-    // console.log("userImg", userImage);
-    // console.log(req.body);
-    // if (!userImage) {
-    res.send({
-      token,
-      // userFromDB,
-    });
-    // } else {
-    //   const key = userImage.key;
-    //   res.send({
-    //     key,
-    //     token,
-    //     userFromDB,
-    //   });
-    // }
+    if (!userFromDB) {
+      res.send(null);
+      return;
+    }
+    delete userFromDB.password;
+    const userImage = await getUserProfileImageModel(req);
+    console.log("userImg", userImage);
+    console.log(req.body);
+    if (!userImage) {
+      res.send({
+        token,
+        userFromDB,
+      });
+    } else {
+      const key = userImage.key;
+      res.send({
+        key,
+        token,
+        userFromDB,
+      });
+    }
   } catch (err) {
     res.status(500);
   }
