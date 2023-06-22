@@ -92,14 +92,7 @@ const getUserByIdModel = async (req) => {
 };
 const getUserProfileImageModel = async (req) => {
   // console.log("file: UserModels.js:94 ~ getUserProfileImageModel ~ req:", req);
-  let userId;
-  if (req.body.cookie.id) {
-    console.log("req.body.cookie.id:", req.body.cookie.id);
 
-    userId = req.body.cookie.id;
-  } else {
-    console.log("check this", req.body.userId);
-  }
   // if (req.body.userId) {
   //   console.log(" req.body.userId:", req.body.userId);
   //   userId = req.body.userId;
@@ -110,6 +103,14 @@ const getUserProfileImageModel = async (req) => {
   // );
   // console.log("id", id);
   try {
+    let userId;
+    if (req.body.cookie.id) {
+      console.log("req.body.cookie.id:", req.body.cookie.id);
+
+      userId = req.body.cookie.id;
+    } else {
+      console.log("check this", req.body.userId);
+    }
     // const userProfileImage = await database("profile_images")
     //   .where({ userId })
     //   .first();
