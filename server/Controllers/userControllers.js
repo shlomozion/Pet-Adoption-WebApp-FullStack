@@ -114,8 +114,8 @@ const updateUserPasswordById = async (req, res) => {
 };
 
 const uploadProfileImg = async (req, res) => {
-  const response = await uploadImgModel(req);
-  const isFileKeyToDb = await writeFileToDbModel(response);
+  // const response = await uploadImgModel(req);
+  // const isFileKeyToDb = await writeFileToDbModel(response);
   res.status(201).send("photo added");
 };
 
