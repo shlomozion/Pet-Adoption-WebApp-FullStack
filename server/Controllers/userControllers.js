@@ -87,6 +87,7 @@ const getUserById = async (req, res) => {
 };
 
 const updateUserById = async (req, res) => {
+  console.log(" req.body.cookie:", req.body.cookie);
   try {
     const { userId } = req.body.cookie;
     const updatedFieldsObj = req.body.updatedFieldsObj;
