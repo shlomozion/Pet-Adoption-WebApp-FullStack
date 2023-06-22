@@ -61,7 +61,7 @@ const getUserById = async (req, res) => {
       userFromDB
     );
     // if (!userFromDB) {
-    //   res.send(null);
+    // res.send(null);
     //   return;
     // }
     // delete userFromDB.password;

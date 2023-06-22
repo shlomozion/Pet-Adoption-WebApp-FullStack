@@ -73,8 +73,10 @@ const logOutModel = async (cookie, res) => {
   }
 };
 const getUserByIdModel = async (req) => {
-  const userId = req.params.id.replace(":", "");
-  console.log("file: UserModels.js:77 ~ getUserByIdModel ~ userId:", userId);
+  console.log("file: UserModels.js:76 ~ getUserByIdModel ~ req:", req);
+
+  // const userId = req.params.id.replace(":", "");
+  // console.log("file: UserModels.js:77 ~ getUserByIdModel ~ userId:", userId);
   // console.log(req, "id");
   try {
     // const user = await database("users").where({ userId }).first();
