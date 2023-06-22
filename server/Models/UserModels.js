@@ -175,7 +175,6 @@ module.exports = {
   getUserByIdModel,
   updateUserPasswordModel,
   updateUserByIdModel,
-  uploadImgModel,
   writeFileToDbModel,
   getUserProfileImageModel,
 };
