@@ -73,9 +73,10 @@ const logOutModel = async (cookie, res) => {
   }
 };
 const getUserByIdModel = async (req) => {
-  console.log("file: UserModels.js:76 ~ getUserByIdModel ~ req:", req);
+  // console.log("file: UserModels.js:76 ~ getUserByIdModel ~ req:", req);
 
-  // const userId = req.params.id.replace(":", "");
+  const userId = req.params.id.replace(":", "");
+  console.log("file: UserModels.js:79 ~ getUserByIdModel ~ userId:", userId);
   // console.log("file: UserModels.js:77 ~ getUserByIdModel ~ userId:", userId);
   // console.log(req, "id");
   try {
