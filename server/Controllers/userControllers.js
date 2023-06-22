@@ -26,7 +26,7 @@ const logIn = async (req, res) => {
     const isCookieSet = await logInModel(req, res);
     const { userId } = req.body;
     console.log("this fucker", req.body);
-    // const userImage = await getUserProfileImageModel(req);
+    const userImage = await getUserProfileImageModel(req);
 
     // if (!userImage) {
     res.status(200).send(req.body);
