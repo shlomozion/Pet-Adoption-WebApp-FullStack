@@ -109,9 +109,21 @@ const getUserProfileImageModel = async (req) => {
   }
 };
 const updateUserPasswordModel = async (userInfo) => {
+  console.log(
+    "file: UserModels.js:112 ~ updateUserPasswordModel ~ userInfo:",
+    userInfo
+  );
   try {
     const { password } = userInfo;
+    console.log(
+      "file: UserModels.js:115 ~ updateUserPasswordModel ~ password:",
+      password
+    );
     const { userId } = userInfo.cookie;
+    console.log(
+      "file: UserModels.js:116 ~ updateUserPasswordModel ~ userId:",
+      userId
+    );
     const isUserPasswordUpdated = await database("users")
       .where({ userId: userId })
       .update({ password: password });
