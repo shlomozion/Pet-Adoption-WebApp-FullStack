@@ -128,13 +128,13 @@ const updateUserByIdModel = async (updateFieldArr) => {
     console.log("userId:", userId);
 
     updateFieldArr.forEach(async (element) => {
-      console.log("element:", element);
+      // console.log("element:", element);
       const updates = {};
       updates[element[0]] = element[1];
-      // const update = await database("users")
-      //   .where({ userId: userId[1] })
-      //   .update(updates);
-      console.log(" updates:", updates);
+      const update = await database("users")
+        .where({ userId: userId[1] })
+        .update(updates);
+      // console.log(" updates:", updates);
     });
     return true;
   } catch (err) {
