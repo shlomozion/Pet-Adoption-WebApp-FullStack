@@ -134,7 +134,7 @@ export default function AdminAddPetForm() {
 
     try {
       const res = await axios.post(
-        `http://localhost:8000/admin/uploadPetImg`,
+        `https://pet-adopt-server.vercel.app/admin/uploadPetImg`,
         formData,
         {
           withCredentials: true,
@@ -169,7 +169,7 @@ export default function AdminAddPetForm() {
     };
     try {
       const res = await axios.post(
-        "http://localhost:8000/admin/addPet",
+        "https://pet-adopt-server.vercel.app/admin/addPet",
         { newPet, userEmail: email },
         {
           withCredentials: true,
