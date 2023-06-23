@@ -114,7 +114,7 @@ const updateUserPasswordModel = async (userInfo) => {
     const { userId } = userInfo.cookie;
     const isUserPasswordUpdated = await database("users")
       .where({ userId: userId })
-      .update({ Password: password });
+      .update({ password: password });
     return true;
   } catch (err) {
     console.log(err);
