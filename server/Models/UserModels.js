@@ -109,14 +109,17 @@ const getUserProfileImageModel = async (req) => {
   }
 };
 const updateUserPasswordModel = async (userInfo) => {
+  console.log("userInfo:", userInfo);
   try {
     const { password } = userInfo;
+    console.log(" password:", password);
 
     const { id } = userInfo.cookie;
+    console.log(" id:", id);
 
-    const isUserPasswordUpdated = await database("users")
-      .where({ userId: id })
-      .update({ password: password });
+    // const isUserPasswordUpdated = await database("users")
+    //   .where({ userId: id })
+    //   .update({ password: password });
     return true;
   } catch (err) {
     console.log(err);
