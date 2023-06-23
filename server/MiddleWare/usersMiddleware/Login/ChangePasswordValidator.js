@@ -6,7 +6,7 @@ const changePasswordValidator = async (req, res, next) => {
   const { id } = req.body.cookie;
   console.log(
     "file: ChangePasswordValidator.js:7 ~ changePasswordValidator ~ userId:",
-    userId
+    id
   );
   const user = await database("users").where({ userId: id }).first();
   bcrypt.compare(password, user.password, function (err, result) {
