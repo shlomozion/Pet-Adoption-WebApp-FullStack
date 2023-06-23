@@ -28,16 +28,6 @@ const addPetToDBModel = async (req) => {
       hypoallergenic,
       dietaryRestrictionArr: [dietaryRestrictionArr],
     } = req.body.newPet;
-    // console.log(" ~ dietaryRestrictionArr:", dietaryRestrictionArr);
-    // console.log(" ~ hypoallergenic:", hypoallergenic);
-    // console.log(" ~ bio:", bio);
-    // console.log(" ~ petColorArr:", petColorArr);
-    // console.log(" ~ weight:", weight);
-    // console.log(" ~ height:", height);
-    // console.log(" ~ petBreedArr:", petBreedArr);
-    // console.log(" ~ petStatus:", petStatus);
-    // console.log(" ~ petName:", petName);
-    // console.log(" ~ petTypeArr:", petTypeArr);
 
     newPetId = await database("pets").insert({
       type: petTypeArr,
@@ -57,19 +47,19 @@ const addPetToDBModel = async (req) => {
     console.log(err);
   }
 };
-const uploadPetImgModel = async (req) => {
-  console.log("req.body", req.body);
+// const uploadPetImgModel = async (req) => {
+//   console.log("req.body", req.body);
 
-  try {
-    const file = req.file;
-    console.log("🚀 ~  file:", file);
-    const result = await uploadPetImage(file);
+//   try {
+//     const file = req.file;
+//     console.log("🚀 ~  file:", file);
+//     const result = await uploadPetImage(file);
 
-    return result;
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
+//     return result;
+//   } catch (err) {
+//     console.log("Error", err);
+//   }
+// };
 const addImgToDbModel = async (response) => {
   const [newPetId] = response.petId;
   console.log("link", response);
@@ -84,6 +74,6 @@ const addImgToDbModel = async (response) => {
 module.exports = {
   getAdminByIdModel,
   addPetToDBModel,
-  uploadPetImgModel,
+  // uploadPetImgModel,
   addImgToDbModel,
 };
