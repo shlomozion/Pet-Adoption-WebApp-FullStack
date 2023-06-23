@@ -21,7 +21,7 @@ export default function AdminLogin() {
     if (isEmailValid && isPasswordValid) {
       try {
         const res = await axios.post(
-          `http://pet-adopt-server.vercel.app/admin/login`,
+          `https://pet-adopt-server.vercel.app/admin/login`,
           {
             email,
             password,
