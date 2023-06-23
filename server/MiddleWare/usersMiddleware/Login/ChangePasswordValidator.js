@@ -4,6 +4,10 @@ const bcrypt = require("bcrypt");
 const changePasswordValidator = async (req, res, next) => {
   const { password } = req.body;
   const { userId } = req.body.cookie;
+  console.log(
+    "file: ChangePasswordValidator.js:7 ~ changePasswordValidator ~ userId:",
+    userId
+  );
   const user = await database("users").where({ userId: userId }).first();
   bcrypt.compare(password, user.password, function (err, result) {
     if (err) {
