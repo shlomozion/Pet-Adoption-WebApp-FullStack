@@ -86,12 +86,6 @@ export default function AdminAddPetForm() {
     imageChangeHandler,
   } = useImageValidator();
 
-  const formData = new FormData();
-  useEffect(() => {
-    formData.append("image", userImg);
-  }, [userImg]);
-  console.log("🚀 ~ userImg:", userImg);
-
   const [isValidated, setIsValidated] = useState(false);
 
   const allConditionsMet = () => {
@@ -129,8 +123,13 @@ export default function AdminAddPetForm() {
     isHypoallergenicValid,
     isBioValid,
   ]);
+  const formData = new FormData();
+  useEffect(() => {
+    formData.append("image", userImg);
+  }, [userImg]);
+  console.log("🚀 ~ userImg:", userImg);
   const profileImagePostRequest = async () => {
-    // console.log("formData", formData);
+    console.log("formData", formData);
 
     try {
       const res = await axios.post(
