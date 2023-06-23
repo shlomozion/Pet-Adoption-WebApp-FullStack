@@ -85,7 +85,7 @@ const getUserById = async (req, res) => {
     res.status(500);
   }
 };
-
+//im in middle of checking the userId. i changed it to id because thats whats in the cookie. now i need  to see if i get the id or its still undefined.
 const updateUserById = async (req, res) => {
   console.log(" req.body.cookie:", req.body.cookie);
   try {
@@ -93,6 +93,10 @@ const updateUserById = async (req, res) => {
     const updatedFieldsObj = req.body.updatedFieldsObj;
     const updateFieldArr = Object.entries(updatedFieldsObj);
     updateFieldArr.unshift(["userId", id]);
+    console.log(
+      "file: userControllers.js:96 ~ updateUserById ~ updateFieldArr:",
+      updateFieldArr
+    );
 
     const isUserUpdated = await updateUserByIdModel(updateFieldArr);
     const updatedUser = await getUserByIdModel(req);
