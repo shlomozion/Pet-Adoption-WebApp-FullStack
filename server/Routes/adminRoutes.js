@@ -33,6 +33,7 @@ router.post(
   CookieIdRetriever,
   authorization,
   isAdmin,
+  console.log("why am i here?"),
   bodyValidator(addPetSchema),
   adminControllers.addPet
 );
@@ -40,6 +41,7 @@ router.post(
   "/uploadPetImg",
   CookieIdRetriever,
   authorization,
+  console.log("req", req),
   uploadPetImageToS3.single("image"),
   adminControllers.addPetImg
 );

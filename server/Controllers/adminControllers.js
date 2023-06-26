@@ -32,8 +32,7 @@ const addPet = async (req, res) => {
   // const newPetId = await addPetToDBModel(req);
   // petId = newPetId;
   // console.log("🚀 ~ isPetAddedToDB:", isPetAddedToDB);
-
-  res.status(201).send("pet added to db");
+  // res.status(201).send("pet added to db");
 };
 const addPetImg = async (req, res) => {
   // console.log("req in addPetImg", req);
