@@ -8,7 +8,7 @@ const s3 = new aws.S3({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
   region: process.env.AWS_BUCKET_REGION,
 });
-const uploadPetImageToS3 = multer({
+const uploadPetImageToS3 = multer(console.log("im here"), {
   storage: multerS3({
     s3: s3,
     bucket: process.env.AWS_S3_PET_BUCKET_NAME,
