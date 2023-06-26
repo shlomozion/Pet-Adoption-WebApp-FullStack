@@ -166,16 +166,16 @@ export default function AdminAddPetForm() {
       bio,
     };
     try {
-      const res = await axios.post(
-        "https://pet-adopt-server.vercel.app/admin/addPet",
-        { newPet, userEmail: email },
-        {
-          withCredentials: true,
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      // const res = await axios.post(
+      //   "https://pet-adopt-server.vercel.app/admin/addPet",
+      //   { newPet, userEmail: email },
+      //   {
+      //     withCredentials: true,
+      //     headers: {
+      //       Authorization: `Bearer ${token}`,
+      //     },
+      //   }
+      // );
       const isPhotoAdded = await profileImagePostRequest();
       console.log("🚀 ~ isPetAdded:", isPhotoAdded);
       if (res.status === 201) {
