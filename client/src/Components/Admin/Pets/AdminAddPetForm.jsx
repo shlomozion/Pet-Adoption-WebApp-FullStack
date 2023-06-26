@@ -178,11 +178,11 @@ export default function AdminAddPetForm() {
       // );
       const isPhotoAdded = await profileImagePostRequest();
       console.log("🚀 ~ isPetAdded:", isPhotoAdded);
-      if (res.status === 201) {
-        console.log(res);
-      } else {
-        console.log("something went wrong");
-      }
+      // if (res.status === 201) {
+      //   console.log(res);
+      // } else {
+      //   console.log("something went wrong");
+      // }
     } catch (err) {
       console.log(err);
     }
