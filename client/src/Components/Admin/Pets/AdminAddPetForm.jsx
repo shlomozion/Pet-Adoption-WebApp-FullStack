@@ -138,7 +138,7 @@ export default function AdminAddPetForm() {
           withCredentials: true,
           headers: {
             Authorization: `Bearer ${token}`,
-            "Content-Type": "multipart/form-data",
+            // "Content-Type": "multipart/form-data",
           },
         }
       );
