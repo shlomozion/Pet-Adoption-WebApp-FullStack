@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const {
   uploadPetImageToS3,
-} = require("../MiddleWare/AdminMiddleware/UploadPetImage");
+} = require("../MiddleWare/AdminMiddleware/UploadPetImageToS3");
 
 const adminControllers = require("../Controllers/adminControllers");
 const {
