@@ -86,6 +86,7 @@ export default function AdminAddPetForm() {
     imageChangeHandler,
     file,
   } = useImageValidator();
+  console.log("file: AdminAddPetForm.jsx:89 ~ AdminAddPetForm ~ file:", file);
 
   const [isValidated, setIsValidated] = useState(false);
 
