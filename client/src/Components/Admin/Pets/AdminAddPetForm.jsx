@@ -84,6 +84,7 @@ export default function AdminAddPetForm() {
     closeButton,
     setCloseButton,
     imageChangeHandler,
+    file,
   } = useImageValidator();
 
   const [isValidated, setIsValidated] = useState(false);
@@ -123,6 +124,7 @@ export default function AdminAddPetForm() {
     isHypoallergenicValid,
     isBioValid,
   ]);
+
   const formData = new FormData();
   useEffect(() => {
     formData.append("image", userImg);
@@ -131,10 +133,10 @@ export default function AdminAddPetForm() {
   const profileImagePostRequest = async () => {
     try {
       console.log("formData", formData);
+      console.log("file.name", file.name);
       const res = await axios.post(
         `https://pet-adopt-server.vercel.app/admin/uploadPetImg`,
         formData,
-
         {
           withCredentials: true,
           headers: {

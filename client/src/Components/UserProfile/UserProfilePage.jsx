@@ -50,13 +50,13 @@ export default function UserProfilePage() {
   } = usePasswordValidator();
 
   const {
+    userImg,
+    isUploaded,
+    fileDataURL,
+    closeButton,
     imageChangeHandler,
     setCloseButton,
     file,
-    fileDataURL,
-    closeButton,
-    isUploaded,
-    userImg,
   } = useImageValidator();
 
   const { firstName, setFirstName, isFirstNameValid } = useFirstNameValidator();
@@ -232,6 +232,7 @@ export default function UserProfilePage() {
   };
   const imagePostHandler = async () => {
     if (file.name) {
+      console.log("file.name", file.name);
       profileImagePostRequest();
     }
   };
