@@ -206,6 +206,7 @@ export default function UserProfilePage() {
   const formData = new FormData();
   useEffect(() => {
     formData.append("image", userImg);
+    console.log("userImg", userImg);
   }, [userImg]);
   // console.log("formData", formData);
   const profileImagePostRequest = async () => {
@@ -232,7 +233,6 @@ export default function UserProfilePage() {
   };
   const imagePostHandler = async () => {
     if (file.name) {
-      console.log("userImg", userImg);
       console.log("file.name", file.name);
       profileImagePostRequest();
     }

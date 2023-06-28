@@ -128,6 +128,7 @@ export default function AdminAddPetForm() {
   const formData = new FormData();
   useEffect(() => {
     formData.append("image", userImg);
+    console.log("userImg", userImg);
   }, [userImg]);
   console.log("🚀 ~ userImg:", userImg);
   const profileImagePostRequest = async () => {
