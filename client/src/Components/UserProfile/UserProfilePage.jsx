@@ -208,9 +208,9 @@ export default function UserProfilePage() {
     formData.append("image", userImg);
     console.log("userImg", userImg);
   }, [userImg]);
-  // console.log("formData", formData);
   const profileImagePostRequest = async () => {
     try {
+      console.log("formData", formData);
       const res = await axios.post(
         `https://pet-adopt-server.vercel.app/users/uploadImg/:${userId}`,
         formData,

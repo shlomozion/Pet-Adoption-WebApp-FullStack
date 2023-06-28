@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const {
   uploadPetImageToS3,
-} = require("../MiddleWare/AdminMiddleware/UploadPetImageToS3");
+} = require("../MiddleWare/adminMiddleware/UploadPetImageToS3");
 
 const adminControllers = require("../Controllers/adminControllers");
 const {
@@ -11,12 +11,12 @@ const {
 const { signInSchema } = require("..//Schemas/userSchemas");
 const {
   adminPasswordValidator,
-} = require("../MiddleWare/AdminMiddleware/AdminPasswordValidator");
+} = require("../MiddleWare/adminMiddleware/AdminPasswordValidator");
 // const userController = require("../Controllers/userControllers");
 const {
   CookieIdRetriever,
 } = require("../MiddleWare/usersMiddleware/Login/CookieIdRetriever");
-const { isAdmin } = require("../MiddleWare/AdminMiddleware/isAdmin");
+const { isAdmin } = require("../MiddleWare/adminMiddleware/isAdmin");
 const { authorization } = require("../MiddleWare/Authorization");
 const { addPetSchema } = require("..//Schemas/petSchemas");
 
