@@ -14,11 +14,11 @@ module.exports = {
       password: "Sz$8452752",
       port: 3306,
       host: "petadopt.cn1g2k9g4tm7.us-east-1.rds.amazonaws.com",
-      // ssl: true, // Enable SSL
-      // ssl: {
-      //   // SSL options
-      //   rejectUnauthorized: false, // Change this based on your SSL configuration
-      // },
+      ssl: true, // Enable SSL
+      ssl: {
+        // SSL options
+        rejectUnauthorized: false, // Change this based on your SSL configuration
+      },
     },
     pool: {
       min: 2,
@@ -38,11 +38,11 @@ module.exports = {
       password: "Sz$8452752",
       port: 3306,
       host: "petadopt.cn1g2k9g4tm7.us-east-1.rds.amazonaws.com",
-      // ssl: true, // Enable SSL
-      // ssl: {
-      //   // SSL options
-      //   rejectUnauthorized: false, // Change this based on your SSL configuration
-      // },
+      ssl: true, // Enable SSL
+      ssl: {
+        // SSL options
+        rejectUnauthorized: false, // Change this based on your SSL configuration
+      },
     },
     pool: {
       min: 2,
