@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 app.use(
   cors({
-    origin: "https://pet-adopt-client.vercel.app",
+    origin: ["https://pet-adopt-client.vercel.app", "http://localhost:3000"],
     credentials: true,
   })
 );

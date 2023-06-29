@@ -86,7 +86,7 @@ export default function AdminAddPetForm() {
     imageChangeHandler,
     file,
   } = useImageValidator();
-  console.log("file: AdminAddPetForm.jsx:89 ~ AdminAddPetForm ~ file:", file);
+  // console.log("file: AdminAddPetForm.jsx:89 ~ AdminAddPetForm ~ file:", file);
 
   const [isValidated, setIsValidated] = useState(false);
 
@@ -129,11 +129,11 @@ export default function AdminAddPetForm() {
   const formData = new FormData();
   useEffect(() => {
     formData.append("image", userImg);
-    console.log("userImg", userImg);
+    console.log("append image useEffect userImg", userImg);
   }, [userImg]);
   const profileImagePostRequest = async () => {
     try {
-      console.log("formData", formData);
+      // console.log("formData", formData);
       const res = await axios.post(
         `https://pet-adopt-server.vercel.app/admin/uploadPetImg`,
         formData,
@@ -180,7 +180,7 @@ export default function AdminAddPetForm() {
       //   }
       // );
       const isPhotoAdded = await profileImagePostRequest();
-      console.log("🚀 ~ isPetAdded:", isPhotoAdded);
+      // console.log("🚀 ~ isPetAdded:", isPhotoAdded);
       // if (res.status === 201) {
       //   console.log(res);
       // } else {
@@ -191,7 +191,7 @@ export default function AdminAddPetForm() {
     }
   };
 
-  console.log("isvalidated", isValidated);
+  // console.log("isvalidated", isValidated);
   return (
     <div>
       <Container className="border mt-5 d-flex justify-content-center border-0">
