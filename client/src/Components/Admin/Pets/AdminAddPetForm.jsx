@@ -158,39 +158,39 @@ export default function AdminAddPetForm() {
   };
 
   const addPetHandler = async () => {
-    // const newPet = {
-    //   petName,
-    //   petTypeArr,
-    //   petBreedArr,
-    //   petColorArr,
-    //   dietaryRestrictionArr,
-    //   height,
-    //   hypoallergenic,
-    //   weight,
-    //   petStatus,
-    //   bio,
-    // };
     const newPet = {
+      petName,
+      petTypeArr,
+      petBreedArr,
+      petColorArr,
+      dietaryRestrictionArr,
+      height,
+      hypoallergenic,
+      weight,
+      petStatus,
+      bio,
+    };
+    const petImg = {
       image: userImg,
     };
     try {
-      // const res = await axios.post(
-      //   "https://pet-adopt-server.vercel.app/admin/addPet",
-      //   { newPet, userEmail: email },
-      //   {
-      //     withCredentials: true,
-      //     headers: {
-      //       Authorization: `Bearer ${token}`,
-      //     },
-      //   }
-      // );
-      const isPhotoAdded = await profileImagePostRequest(newPet);
-      // console.log("🚀 ~ isPetAdded:", isPhotoAdded);
-      // if (res.status === 201) {
-      //   console.log(res);
-      // } else {
-      //   console.log("something went wrong");
-      // }
+      const res = await axios.post(
+        "https://pet-adopt-server.vercel.app/admin/addPet",
+        { newPet, userEmail: email },
+        {
+          withCredentials: true,
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      const isPhotoAdded = await profileImagePostRequest(petImg);
+      console.log("🚀 ~ isPetAdded:", isPhotoAdded);
+      if (res.status === 201) {
+        console.log(res);
+      } else {
+        console.log("something went wrong");
+      }
     } catch (err) {
       console.log(err);
     }

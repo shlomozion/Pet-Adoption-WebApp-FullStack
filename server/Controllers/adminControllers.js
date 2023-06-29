@@ -28,17 +28,17 @@ const getAdminById = async (req, res) => {
 };
 let petId;
 const addPet = async (req, res) => {
-  // console.log(" req in addPet", req);
-  // const newPetId = await addPetToDBModel(req);
-  // petId = newPetId;
-  // console.log("🚀 ~ isPetAddedToDB:", isPetAddedToDB);
-  // res.status(201).send("pet added to db");
+  console.log(" req in addPet", req);
+  const newPetId = await addPetToDBModel(req);
+  petId = newPetId;
+  console.log("🚀 ~ isPetAddedToDB:", isPetAddedToDB);
+  res.status(201).send("pet added to db");
 };
 const addPetImg = async (req, res) => {
-  // console.log("req in addPetImg", req);
-  // console.log("petId", petId);
-  // const result = await uploadPetImgModel(req);
-  // const isPetImgAddedToDB = await addImgToDbModel({ petId, result });
+  console.log("req in addPetImg", req);
+  console.log("petId", petId);
+  const result = await uploadPetImgModel(req);
+  const isPetImgAddedToDB = await addImgToDbModel({ petId, result });
   res.status(201).send("pet image added");
   // console.log("🚀 isPetImgAddedToDB:", isPetImgAddedToDB);
 };
