@@ -2,7 +2,7 @@ const { logInModel } = require("../Models/UserModels");
 const {
   getAdminByIdModel,
   addPetToDBModel,
-  uploadPetImgModel,
+  // uploadPetImgModel,
   addImgToDbModel,
 } = require("../Models/adminModels");
 
