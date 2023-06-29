@@ -77,6 +77,8 @@ export default function AdminAddPetForm() {
     isPetColorValid,
   } = usePetColorValidator();
 
+  console.log(" petColor:", petColor);
+
   const {
     userImg,
     isUploaded,
