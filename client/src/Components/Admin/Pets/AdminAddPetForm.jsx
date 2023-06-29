@@ -127,11 +127,11 @@ export default function AdminAddPetForm() {
   ]);
 
   const formData = new FormData();
-  useEffect(() => {
-    formData.append("image", userImg);
-    console.log("append image useEffect userImg", userImg);
-  }, [userImg]);
-  const profileImagePostRequest = async () => {
+  // useEffect(() => {
+  //   formData.append("image", userImg);
+  //   console.log("append image useEffect userImg", userImg);
+  // }, [userImg]);
+  const profileImagePostRequest = async (formData) => {
     try {
       console.log("formData", formData);
       const res = await axios.post(
@@ -156,17 +156,20 @@ export default function AdminAddPetForm() {
   };
 
   const addPetHandler = async () => {
+    // const newPet = {
+    //   petName,
+    //   petTypeArr,
+    //   petBreedArr,
+    //   petColorArr,
+    //   dietaryRestrictionArr,
+    //   height,
+    //   hypoallergenic,
+    //   weight,
+    //   petStatus,
+    //   bio,
+    // };
     const newPet = {
-      petName,
-      petTypeArr,
-      petBreedArr,
-      petColorArr,
-      dietaryRestrictionArr,
-      height,
-      hypoallergenic,
-      weight,
-      petStatus,
-      bio,
+      image: userImg,
     };
     try {
       // const res = await axios.post(
@@ -179,7 +182,7 @@ export default function AdminAddPetForm() {
       //     },
       //   }
       // );
-      const isPhotoAdded = await profileImagePostRequest();
+      const isPhotoAdded = await profileImagePostRequest(newPet);
       // console.log("🚀 ~ isPetAdded:", isPhotoAdded);
       // if (res.status === 201) {
       //   console.log(res);
