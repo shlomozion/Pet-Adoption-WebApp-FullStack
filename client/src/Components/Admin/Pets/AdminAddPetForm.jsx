@@ -133,7 +133,7 @@ export default function AdminAddPetForm() {
   }, [userImg]);
   const profileImagePostRequest = async () => {
     try {
-      // console.log("formData", formData);
+      console.log("formData", formData);
       const res = await axios.post(
         `https://pet-adopt-server.vercel.app/admin/uploadPetImg`,
         formData,
