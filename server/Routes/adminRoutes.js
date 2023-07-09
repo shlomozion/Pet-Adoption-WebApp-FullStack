@@ -3,7 +3,6 @@ const router = express.Router();
 const {
   uploadPetImageToS3,
 } = require("../MiddleWare/AdminMiddleware/UploadPetImageToS3");
-
 const adminControllers = require("../Controllers/adminControllers");
 const {
   bodyValidator,

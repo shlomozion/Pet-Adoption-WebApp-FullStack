@@ -1,5 +1,5 @@
 const database = require("../knex/knex");
-const { uploadPetImage } = require("../S3");
+// const { uploadPetImage } = require("../S3");
 
 const getAdminByIdModel = async (req) => {
   try {
@@ -61,14 +61,14 @@ const addPetToDBModel = async (req) => {
 //   }
 // };
 const addImgToDbModel = async (response) => {
-  const [newPetId] = response.petId;
+  // const [newPetId] = response.petId;
   console.log("link", response);
-  const isKeyAdded = await database("pets")
-    .select("picture")
-    .where("petId", newPetId)
-    .update({
-      picture: response.result.Location,
-    });
+  // const isKeyAdded = await database("pets")
+  //   .select("picture")
+  //   .where("petId", newPetId)
+  //   .update({
+  //     picture: response.result.Location,
+  //   });
   return isKeyAdded;
 };
 module.exports = {

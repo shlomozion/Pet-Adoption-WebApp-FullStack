@@ -78,7 +78,7 @@ const NavBar = () => {
             </Nav>
           ) : (
             <Nav>
-              <Nav className="m-0 p-0 align-items-center">Welcome:</Nav>
+              {/* <Nav className="m-0 p-0 align-items-center">Welcome:</Nav> */}
               <NavDropdown
                 title={firstName}
                 id="navbarScrollingDropdown"

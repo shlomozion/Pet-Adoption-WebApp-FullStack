@@ -77,7 +77,7 @@ export default function AdminAddPetForm() {
     isPetColorValid,
   } = usePetColorValidator();
 
-  console.log(" petColor:", petColor);
+  // console.log(" petColor:", petColor);
 
   const {
     userImg,
@@ -88,6 +88,7 @@ export default function AdminAddPetForm() {
     imageChangeHandler,
     file,
   } = useImageValidator();
+  console.log("AdminAddPetForm ~ userImg:", userImg);
   // console.log("file: AdminAddPetForm.jsx:89 ~ AdminAddPetForm ~ file:", file);
 
   const [isValidated, setIsValidated] = useState(false);
@@ -129,6 +130,7 @@ export default function AdminAddPetForm() {
   ]);
 
   const formData = new FormData();
+  // console.log("AdminAddPetForm ~ formData:", formData);
   // useEffect(() => {
   //   formData.append("image", userImg);
   //   console.log("append image useEffect userImg", userImg);

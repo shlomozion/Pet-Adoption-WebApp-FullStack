@@ -4,6 +4,7 @@ import { UserContextInstance } from "../../Context/UserContext";
 import { usePasswordValidator } from "../../FormValidationHooks/PasswordValidator";
 import { useEmailValidator } from "../../FormValidationHooks/EmailValidator";
 import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Container from "react-bootstrap/esm/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -16,6 +17,7 @@ export default function Login() {
   const { password, setPassword, isPasswordValid } = usePasswordValidator();
   const { setToken, setIsLoggedIn } = useContext(AuthContextInstance);
   const { setCurrentUser, setUserProfileImg } = useContext(UserContextInstance);
+  const [errorMessage, setErrorMessage] = useState("");
 
   // console.log(setIsLoggedIn);
 
@@ -47,7 +49,8 @@ export default function Login() {
         }
       } catch (error) {
         setIsLoggedIn(false);
-        console.log(error);
+        console.log(error.response.data);
+        setErrorMessage(error.response.data);
       }
       //   setSignInUser({ email, password });
     }
@@ -55,59 +58,55 @@ export default function Login() {
   return (
     <div>
       <Container>
-        <Form.Group md="4" controlId="validationCustom03">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            isValid={isEmailValid}
-            isInvalid={!isEmailValid}
-            required
-            inputMode="email"
-            type="email"
-            onInput={(e) => setEmail(e.target.value)}
-          />
-          <Form.Control.Feedback type="valid">
-            Looks good!
-          </Form.Control.Feedback>
-          <Form.Control.Feedback type="invalid">
-            Invalid email
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group md="4" controlId="validationCustom04">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            isValid={isPasswordValid}
-            isInvalid={!isPasswordValid}
-            required
-            type={`${!showPassword ? "password" : "text"}`}
-            onInput={(e) => setPassword(e.target.value)}
-          />
-          <Form.Control.Feedback type="valid">
-            Looks good!
-          </Form.Control.Feedback>
-          <Form.Control.Feedback type="invalid">
-            Invalid password
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group controlId="validationCustom06">
-          <Form.Check
-            size="sm"
-            type={"checkbox"}
-            label="Show password"
-            className="d-flex justify-content-end"
-            onClick={() =>
-              `${
-                !showPassword ? setShowPassword(true) : setShowPassword(false)
-              }`
-            }
-          />
-        </Form.Group>
-        <Button
-          className="rounded-pill"
-          variant="primary"
-          onClick={handleSignIn}
-        >
-          Log in
-        </Button>
+        <Form>
+          <Form.Group md="4" controlId="validationCustom03">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              autoComplete="username"
+              required
+              inputMode="email"
+              type="email"
+              onInput={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group md="4" controlId="validationCustom04">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              autoComplete="current-password"
+              required
+              type={`${!showPassword ? "password" : "text"}`}
+              onInput={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
+          {errorMessage && (
+            <div className="d-flex">
+              {errorMessage}
+              <NavLink className="ms-1" to={"/signup"}>
+                sign up
+              </NavLink>
+            </div>
+          )}
+          <Form.Group controlId="validationCustom06">
+            <Form.Check
+              size="sm"
+              type={"checkbox"}
+              label="Show password"
+              className="d-flex justify-content-end"
+              onClick={() =>
+                `${
+                  !showPassword ? setShowPassword(true) : setShowPassword(false)
+                }`
+              }
+            />
+          </Form.Group>
+          <Button
+            className="rounded-pill"
+            variant="primary"
+            onClick={handleSignIn}
+          >
+            Log in
+          </Button>
+        </Form>
       </Container>
     </div>
   );

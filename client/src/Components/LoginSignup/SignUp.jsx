@@ -27,22 +27,25 @@ export default function SignUp() {
     setRePassword,
     isRePasswordValid,
   } = usePasswordValidator();
+
   const { phoneNumber, setPhoneNumber, isPhoneNumberValid } =
     usePhoneNumberValidator();
 
   const [showPassword, setShowPassword] = useState(false);
   const [isValidated, setIsValidated] = useState(false);
   const [isWeeklyEmail, setIsWeeklyEmail] = useState(false);
+  const [missingFieldsMessage, setMissingFieldsMessage] = useState("");
+
+  const conditions = [
+    isFirstNameValid === true,
+    isLastNameValid === true,
+    isEmailValid === true,
+    isPasswordValid === true,
+    isRePasswordValid === true,
+    isPhoneNumberValid === true,
+  ];
 
   const allConditionsMet = () => {
-    const conditions = [
-      isFirstNameValid === true,
-      isLastNameValid === true,
-      isEmailValid === true,
-      isPasswordValid === true,
-      isRePasswordValid === true,
-      isPhoneNumberValid === true,
-    ];
     const allConditionsMet = conditions.every((condition) => condition);
     if (allConditionsMet === true) {
       setIsValidated(true);
@@ -52,6 +55,12 @@ export default function SignUp() {
   };
   useEffect(() => {
     allConditionsMet();
+    const missingFields = conditions.filter((condition) => condition === false);
+    if (missingFields.length === 0) {
+      setMissingFieldsMessage("");
+    } else {
+      setMissingFieldsMessage(`Missing ${missingFields.length} Fields`);
+    }
   }, [
     isFirstNameValid,
     isLastNameValid,
@@ -94,95 +103,91 @@ export default function SignUp() {
   return (
     <div>
       <Container>
-        <Form noValidate>
+        <Form>
           <Form.Group md="4" controlId="validationCustom01">
             <Form.Label>First name</Form.Label>
             <Form.Control
+              style={
+                isFirstNameValid
+                  ? {
+                      border: "1px solid #008000",
+                      boxShadow: "0 0 0 0.05rem #008000",
+                    }
+                  : {}
+              }
               required
-              isValid={isFirstNameValid}
-              isInvalid={!isFirstNameValid}
               type="text"
               onInput={(e) => setFirstName(e.target.value)}
             />
-            <Form.Control.Feedback type="valid">
-              Looks good!
-            </Form.Control.Feedback>
-            <Form.Control.Feedback type="invalid">
-              Missing first name
-            </Form.Control.Feedback>
           </Form.Group>
           <Form.Group md="4" controlId="validationCustom02">
             <Form.Label>Last name</Form.Label>
             <Form.Control
-              isValid={isLastNameValid}
-              isInvalid={!isLastNameValid}
+              style={
+                isLastNameValid
+                  ? {
+                      border: "1px solid #008000",
+                      boxShadow: "0 0 0 0.05rem #008000",
+                    }
+                  : {}
+              }
               required
               type="text"
               onInput={(e) => setLastName(e.target.value)}
             />
-            <Form.Control.Feedback type="valid">
-              Looks good!
-            </Form.Control.Feedback>
-            <Form.Control.Feedback type="invalid">
-              Missing last name
-            </Form.Control.Feedback>
           </Form.Group>
           <Form.Group md="4" controlId="validationCustom03">
             <Form.Label>Email</Form.Label>
             <Form.Control
-              isValid={isEmailValid}
-              isInvalid={!isEmailValid}
+              style={
+                isEmailValid
+                  ? {
+                      border: "1px solid #008000",
+                      boxShadow: "0 0 0 0.05rem #008000",
+                    }
+                  : {}
+              }
+              autoComplete="username"
               required
               inputMode="email"
               type="email"
               onInput={(e) => setEmail(e.target.value)}
             />
-            <Form.Control.Feedback type="valid">
-              Looks good!
-            </Form.Control.Feedback>
-            <Form.Control.Feedback type="invalid">
-              Invalid email
-            </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group
-            md="4"
-            controlId="validationCustom04"
-            autocomplete="new-password"
-          >
+          <Form.Group md="4" controlId="validationCustom04">
             <Form.Label>Password</Form.Label>
             <Form.Control
-              isValid={isPasswordValid}
-              isInvalid={!isPasswordValid}
+              style={
+                isPasswordValid
+                  ? {
+                      border: "1px solid #008000",
+                      boxShadow: "0 0 0 0.05rem #008000",
+                    }
+                  : {}
+              }
+              autoComplete="new-password"
               required
               type={`${!showPassword ? "password" : "text"}`}
               onInput={(e) => setPassword(e.target.value)}
             />
-            <Form.Control.Feedback type="valid">
-              Looks good!
-            </Form.Control.Feedback>
-            <Form.Control.Feedback type="invalid">
-              Invalid password
-            </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group
-            md="4"
-            controlId="validationCustom05"
-            autocomplete="new-password"
-          >
+          <Form.Group md="4" controlId="validationCustom05">
             <Form.Label>Confirm password</Form.Label>
             <Form.Control
-              isValid={isRePasswordValid}
-              isInvalid={!isRePasswordValid}
+              style={
+                isRePasswordValid
+                  ? {
+                      border: "1px solid #008000",
+                      boxShadow: "0 0 0 0.05rem #008000",
+                    }
+                  : {}
+              }
+              autoComplete="new-password"
               required
               type={`${!showPassword ? "password" : "text"}`}
               onInput={(e) => setRePassword(e.target.value)}
             />
-            <Form.Control.Feedback type="valid">
-              Passwords match!
-            </Form.Control.Feedback>
-            <Form.Control.Feedback type="invalid">
-              Passwords don't match
-            </Form.Control.Feedback>
+
             <Form.Group controlId="validationCustom06">
               <Form.Check
                 size="sm"
@@ -202,19 +207,19 @@ export default function SignUp() {
           <Form.Group md="4" controlId="validationCustom07">
             <Form.Label>Phone number</Form.Label>
             <Form.Control
-              isValid={isPhoneNumberValid}
-              isInvalid={!isPhoneNumberValid}
+              style={
+                isPhoneNumberValid
+                  ? {
+                      border: "1px solid #008000",
+                      boxShadow: "0 0 0 0.05rem #008000",
+                    }
+                  : {}
+              }
               inputMode="tel"
               required
               type="tel"
               onInput={(e) => setPhoneNumber(e.target.value)}
             />
-            <Form.Control.Feedback type="valid">
-              Looks good!
-            </Form.Control.Feedback>
-            <Form.Control.Feedback type="invalid">
-              Not a valid phone number
-            </Form.Control.Feedback>
           </Form.Group>
           <Form.Check
             type={"checkbox"}
@@ -228,14 +233,21 @@ export default function SignUp() {
               }`
             }
           />
+          {
+            <div className="text text-danger d-flex justify-content-end">
+              {missingFieldsMessage}
+            </div>
+          }
         </Form>
-        <Button
-          className="rounded-pill"
-          variant="primary"
-          onClick={() => handleSignUp()}
-        >
-          Sign up!
-        </Button>
+        <div className="d-flex justify-content-end">
+          <Button
+            className="rounded-pill"
+            variant={isValidated ? "success" : "danger"}
+            onClick={() => handleSignUp()}
+          >
+            Sign up!
+          </Button>
+        </div>
       </Container>
     </div>
   );

@@ -15,7 +15,7 @@ const uploadPetImageToS3 = multer({
     contentType: multerS3.AUTO_CONTENT_TYPE,
     acl: "public-read",
     key: function (req, file, cb) {
-      // console.log("photo req", req.body, file);
+      console.log("uploadPetImageToS3", req.body, file);
       cb(null, file.originalname);
     },
   }),

@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useContext } from "react";
 // import { UserContextInstance } from "../../Context/UserContext";
+
 // import axios from "axios";
 // import Container from "react-bootstrap/Container";
 import AdminLink from "../Footer/AdminLink";
 
 import Carousels from "./Carousel";
+import { AuthContextInstance } from "../../Context/AuthContext";
 
 // import UserProfile from "./UserProfile";
 // import AllPets from "./AllPets";
@@ -15,6 +17,8 @@ import Carousels from "./Carousel";
 // import { Routes, Route } from "react-router-dom";
 
 export default function Homepage() {
+  const { isLoggedIn } = useContext(AuthContextInstance);
+
   // const { setCurrentUser, setIsSignedIn } = useContext(UserContextInstance);
 
   // const {
@@ -59,7 +63,7 @@ export default function Homepage() {
   return (
     <div className="border">
       <Carousels />
-      <AdminLink />
+      {!isLoggedIn && <AdminLink />}
 
       {/* <UserProfile /> */}
 
