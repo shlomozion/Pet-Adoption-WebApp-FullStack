@@ -29,7 +29,7 @@ const getAdminById = async (req, res) => {
 let petId;
 const addPet = async (req, res) => {
   const newPetId = await addPetToDBModel(req);
-  petId = newPetId;
+  [petId] = newPetId;
   res.status(201).send("req at addPet ");
 };
 const addPetImg = async (req, res) => {
