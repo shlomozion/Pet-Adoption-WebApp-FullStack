@@ -64,12 +64,12 @@ const addImgToDbModel = async ({ petId, req }) => {
   console.log("addImgToDbModel ~ petId:", petId);
 
   console.log("link", req.file.location);
-  // const isKeyAdded = await database("pets")
-  //   .select("picture")
-  //   .where("petId", newPetId)
-  //   .update({
-  //     picture: response.result.Location,
-  //   });
+  const isKeyAdded = await database("pets")
+    .select("picture")
+    .where("petId", petId)
+    .update({
+      picture: req.file.location,
+    });
   return isKeyAdded;
 };
 module.exports = {
