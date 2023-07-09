@@ -26,16 +26,18 @@ const getAdminById = async (req, res) => {
   delete admin.password;
   res.status(200).send({ token, admin });
 };
-let petId;
+// let petId;
 const addPet = async (req, res) => {
-  // console.log("file: adminControllers.js:31 ~ addPet ~ req:", req);
-  // console.log(" req in addPet", req);
-  // const newPetId = await addPetToDBModel(req);
+  const newPetId = await addPetToDBModel(req);
   // petId = newPetId;
-
   res.status(201).send("req at addPet ");
 };
 const addPetImg = async (req, res) => {
+  console.log(
+    "file: adminControllers.js:36 ~ addPetImg ~ req:",
+    req.body.petId
+  );
+
   console.log(
     "file: adminControllers.js:39 ~ addPetImg ~ req:",
     req.file.location

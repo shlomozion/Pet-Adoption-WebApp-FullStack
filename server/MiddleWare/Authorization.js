@@ -11,12 +11,11 @@ const authorization = async (req, res, next) => {
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     if (decoded) {
       res.status(200);
-      // console.log("decoded", decoded);
+
       next();
       return;
     } else {
       res.status(401).send(err.message);
-      // console.log("err", err);
     }
   });
 };

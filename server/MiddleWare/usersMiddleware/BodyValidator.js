@@ -5,7 +5,6 @@ function bodyValidator(schema) {
   try {
     return (req, res, next) => {
       const valid = ajv.validate(schema, req.body.newPet || req.body);
-      // console.log(valid);
       if (!valid) {
         res.status(400).send(ajv.errors[0].message);
         return;
