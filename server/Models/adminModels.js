@@ -60,9 +60,10 @@ const addPetToDBModel = async (req) => {
 //     console.log("Error", err);
 //   }
 // };
-const addImgToDbModel = async (response) => {
-  // const [newPetId] = response.petId;
-  console.log("link", response);
+const addImgToDbModel = async ({ petId, req }) => {
+  console.log("addImgToDbModel ~ petId:", petId);
+
+  console.log("link", req.file.location);
   // const isKeyAdded = await database("pets")
   //   .select("picture")
   //   .where("petId", newPetId)

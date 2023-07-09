@@ -33,16 +33,13 @@ const addPet = async (req, res) => {
   res.status(201).send("req at addPet ");
 };
 const addPetImg = async (req, res) => {
-  console.log("file: adminControllers.js:30 ~ petId:", petId);
-  console.log(
-    "file: adminControllers.js:39 ~ addPetImg ~ req:",
-    req.file.location
-  );
-  // console.log("req in addPetImg", req);
-  // console.log("petId", petId);
-  // const result = await uploadPetImgModel(req);
-  // console.log("js:41 ~ addPetImg ~ result:", result)
-  // const isPetImgAddedToDB = await addImgToDbModel({ petId, result });
+  // console.log("file: adminControllers.js:30 ~ petId:", petId);
+  // console.log(
+  //   "file: adminControllers.js:39 ~ addPetImg ~ req:",
+  //   req.file.location
+  // );
+
+  const isPetImgAddedToDB = await addImgToDbModel({ petId, req });
   res.status(201).send("req at addPetImg");
   // console.log("🚀 isPetImgAddedToDB:", isPetImgAddedToDB);
 };
