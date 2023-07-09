@@ -28,19 +28,21 @@ const getAdminById = async (req, res) => {
 };
 let petId;
 const addPet = async (req, res) => {
+  console.log("file: adminControllers.js:31 ~ addPet ~ req:", req);
   // console.log(" req in addPet", req);
   // const newPetId = await addPetToDBModel(req);
   // petId = newPetId;
 
-  res.status(201).send("req at addPet ", req);
+  res.status(201).send("req at addPet ");
 };
 const addPetImg = async (req, res) => {
+  console.log("file: adminControllers.js:39 ~ addPetImg ~ req:", req);
   // console.log("req in addPetImg", req);
   // console.log("petId", petId);
   // const result = await uploadPetImgModel(req);
   // console.log("js:41 ~ addPetImg ~ result:", result)
   // const isPetImgAddedToDB = await addImgToDbModel({ petId, result });
-  res.status(201).send("req at addPetImg", req, "res", res);
+  res.status(201).send("req at addPetImg");
   // console.log("🚀 isPetImgAddedToDB:", isPetImgAddedToDB);
 };
 
