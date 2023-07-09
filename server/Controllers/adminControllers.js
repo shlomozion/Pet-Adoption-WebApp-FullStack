@@ -36,7 +36,10 @@ const addPet = async (req, res) => {
   res.status(201).send("req at addPet ");
 };
 const addPetImg = async (req, res) => {
-  console.log("file: adminControllers.js:39 ~ addPetImg ~ req:", req);
+  console.log(
+    "file: adminControllers.js:39 ~ addPetImg ~ req:",
+    req.file.location
+  );
   // console.log("req in addPetImg", req);
   // console.log("petId", petId);
   // const result = await uploadPetImgModel(req);
