@@ -11,9 +11,9 @@ module.exports = {
     connection: {
       database: "petAdopt",
       user: "root",
-      password: "Sz$8452752",
+      password: "",
       port: 3306,
-      host: "petadopt.cn1g2k9g4tm7.us-east-1.rds.amazonaws.com",
+      host: "",
       ssl: true, // Enable SSL
       ssl: {
         // SSL options
@@ -35,9 +35,9 @@ module.exports = {
     connection: {
       database: "petAdopt",
       user: "root",
-      password: "Sz$8452752",
+      password: "",
       port: 3306,
-      host: "petadopt.cn1g2k9g4tm7.us-east-1.rds.amazonaws.com",
+      host: "",
       ssl: true, // Enable SSL
       ssl: {
         // SSL options
